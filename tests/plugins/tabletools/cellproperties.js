@@ -150,7 +150,7 @@
 					assert.areEqual( cells[ i ], model[ i ], 'Cells at index "' + i + '" should be equal' );
 				}
 
-				assert.isTrue( dialog.isEditing( editor ), 'Dialog is in editing mode' );
+				assert.areEqual( CKEDITOR.dialog.EDITING_MODE, dialog.getMode( editor ), 'Dialog is in editing mode.' );
 			} );
 		},
 
