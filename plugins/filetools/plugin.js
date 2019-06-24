@@ -39,10 +39,10 @@
 			editor.on( 'fileUploadRequest', function( evt ) {
 				var fileLoader = evt.data.fileLoader;
 
-				fileLoader.xhr.open( 'POST', fileLoader.uploadUrl, true );
+				fileLoader.xhr.open( 'PUT', fileLoader.uploadUrl, true );
 
 				// Adding file to event's data by default - allows overwriting it by user's event listeners. (https://dev.ckeditor.com/ticket/13518)
-				evt.data.requestData.upload = { file: fileLoader.file, name: fileLoader.fileName };
+				evt.data.requestData.upload = { value: fileLoader.file, name: fileLoader.fileName };
 			}, null, null, 5 );
 
 			editor.on( 'fileUploadRequest', function( evt ) {
